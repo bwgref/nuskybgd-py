@@ -789,7 +789,7 @@ Error: bad pixel file not found, skipping:
         ab, obsinfofile))
 
     caldbbpixpath = env._CALDB.getBADPIX(
-        evthdr['INSTRUME'], 'DET0', evthdr['DATE-OBS'])
+        evthdr['INSTRUME'], 'DET0', (evthdr['DATE-OBS'].split('.'))[0])
     bpixfiles.append('%s/%s' % (env._CALDB_PATH, caldbbpixpath))
 
     print('Collecting bad pixel lists...')

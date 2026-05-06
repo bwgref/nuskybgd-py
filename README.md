@@ -2,6 +2,15 @@
 
 # Requirements
 
+## 2026 updates
+
+- Install xspec via conda:
+
+> conda install xspec -c https://heasarc.gsfc.nasa.gov/FTP/software/conda/
+
+...note that this is a work in progress.
+
+
 - Nuskybgd interacts with Xspec via PyXspec; you must install HEASOFT from source to use PyXspec.
 
     [Download HEASOFT](https://heasarc.gsfc.nasa.gov/lheasoft/download.html])

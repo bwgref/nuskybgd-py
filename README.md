@@ -2,15 +2,22 @@
 
 # Requirements
 
-- Nuskybgd interacts with Xspec via PyXspec; you must install HEASOFT from source to use PyXspec.
-
-    [Download HEASOFT](https://heasarc.gsfc.nasa.gov/lheasoft/download.html])
-
-- You need a Python 3 (3.6 or newer) environment.
-
 - We recommend installing nuskybgd in its own virtual environment (i.e., using a ["miniconda" installation](https://docs.conda.io/en/latest/miniconda.html)).
 
-- The build instructions for pyXspec can be found [here](https://heasarc.gsfc.nasa.gov/xanadu/xspec/python/html/buildinstall.html). Please build and confirm that pyXspec is working *first* before attempting to install nuskybgd.
+## 2026 updates
+
+The current version has been tested using the version of XSPEC that is installable via
+conda. Note that this is NOT available via public channels, but instead uses a custom
+conda channel at the HEASARC. This makes the installation of PyXSPEC a lot simpler,
+but I've been running into compatability issues with *other* tools (like NuSTARDAS)
+when you install xspec this way. I recommend using a completely fresh shell for all
+nuproducts runs (e.g., don't run nuskybgd and nuproducts in the same terminal window).
+
+- To install xspec via conda:
+
+> conda install xspec -c https://heasarc.gsfc.nasa.gov/FTP/software/conda/
+
+...note that this is a work in progress.
 
 # Notes and attribution
 
@@ -42,10 +49,10 @@ These standard HEASARC environment variables must be set up before anything else
 export CALDB=/soft/astro/heasarc/CALDB
 ```
 
-## 2. Create a new environement for nuskybgd, using python 3.7
+## 2. Create a new environement for nuskybgd, using python 3.13
 
 ```
-create create --name nuskybgd-py py=3.7
+create create --name nuskybgd-py py=3.13
 conda activate nuskybgd-py
 ```
 
@@ -53,6 +60,7 @@ conda activate nuskybgd-py
 
 ```
 cd ~/git/nuskybgd-py
+conda install xspec -c https://heasarc.gsfc.nasa.gov/FTP/software/conda/
 pip install -r requirements.txt
 ```
 
@@ -69,7 +77,9 @@ pip install -e .
 ## You are now ready to run nuskybgd!
 
 Below is the original QuickStart guide from
-achronal. elow consists of achronal's original quickstart guide for setting up the environment. An additional practical example can be found from bwgref [here](https://github.com/NuSTAR/nuskybgd-py/blob/main/notebooks/walkthroughs/nuskybgd_walkthrough.ipynb).
+achronal.
+
+An additional practical example can be found from bwgref [here](https://github.com/NuSTAR/nuskybgd-py/blob/main/notebooks/walkthroughs/nuskybgd_walkthrough.ipynb).
 
 ***
 
